@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 export default function Header() {
   const router = useRouter();
   return (
-    <header>
-      <div>AWESOME FOOD STORE</div>
+    <>
+      <header>
+        <h1>AWESOME FOOD STORE</h1>
+      </header>
       <nav>
         <Link href="/">
           <a className={router.pathname === "/" ? "active" : ""}>ABOUT</a>
@@ -14,6 +16,6 @@ export default function Header() {
           <a className={router.pathname === "/about" ? "active" : ""}>STORE</a>
         </Link>
       </nav>
-    </header>
+    </>
   );
 }
