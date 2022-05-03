@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <link rel="stylesheet" href="https://unpkg.com/mvp.css"></link>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
-
-export default MyApp
