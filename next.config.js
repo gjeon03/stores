@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const path = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -14,6 +16,9 @@ const nextConfig = {
         destination: `http://localhost:9000/stores/:id`,
       },
     ];
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
   },
 };
 
