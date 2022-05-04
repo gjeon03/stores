@@ -11,6 +11,12 @@ import {
 } from "react-bootstrap";
 import styled from "styled-components";
 
+const BodyArea = styled(Container)`
+  min-height: 80vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
+`;
+
 const GridArea = styled(Row)`
   grid-row-gap: 30px;
 `;
@@ -136,7 +142,7 @@ export default function store({ results }) {
     setShow(true);
   };
   return (
-    <>
+    <BodyArea>
       <GridArea xl={5}>
         {results?.map((v, i) => (
           <Item xs={6} md={4} key={i}>
@@ -173,7 +179,7 @@ export default function store({ results }) {
           </Overlay>
         )}
       </Toast>
-    </>
+    </BodyArea>
   );
 }
 

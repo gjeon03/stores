@@ -13,9 +13,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <BodyArea>
-        <div>{children}</div>
-      </BodyArea>
+      <div>{children}</div>
       <Footer />
     </>
   );
