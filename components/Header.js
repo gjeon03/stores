@@ -1,11 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import styled from "styled-components";
-
-const Brand = styled(Navbar.Brand)`
-  font-size: 25px;
-`;
 
 export default function Header() {
   const router = useRouter();
@@ -13,14 +8,16 @@ export default function Header() {
   useEffect(() => {
     if (router.pathname === "/") {
       setLocation(true);
-    } else {
+    } else if (router.pathname === "/store") {
       setLocation(false);
+    } else {
+      setLocation(null);
     }
   }, []);
   return (
     <Navbar bg="light" variant="light">
       <Container>
-        <Brand href="/">AWESOME FOOD STORE</Brand>
+        <Navbar.Brand href="/">AWESOME FOOD STORE</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link
             href="/"
@@ -30,7 +27,10 @@ export default function Header() {
           </Nav.Link>
           <Nav.Link
             href="/store"
-            style={(!location && { fontWeight: "800", color: "black" }) || {}}
+            style={
+              (location === false && { fontWeight: "800", color: "black" }) ||
+              {}
+            }
           >
             STORE
           </Nav.Link>
