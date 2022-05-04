@@ -1,5 +1,6 @@
 import { Container, Image } from "react-bootstrap";
 import styled from "styled-components";
+import Seo from "../components/Seo";
 
 const BodyArea = styled(Container)`
   min-height: 40vh;
@@ -38,6 +39,7 @@ const Description = styled.span`
 export default function Home() {
   return (
     <>
+      <Seo title="ABOUT" />
       <BackGroundImage $url={"/plate.jpeg"} />
       <BodyArea>
         <Content>

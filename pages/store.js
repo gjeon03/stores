@@ -10,6 +10,7 @@ import {
   Toast,
 } from "react-bootstrap";
 import styled from "styled-components";
+import Seo from "../components/Seo";
 
 const BodyArea = styled(Container)`
   min-height: 80vh;
@@ -143,6 +144,7 @@ export default function store({ results }) {
   };
   return (
     <BodyArea>
+      <Seo title="STORE" />
       <GridArea xl={5}>
         {results?.map((v, i) => (
           <Item xs={6} md={4} key={i}>
