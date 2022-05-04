@@ -1,7 +1,11 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import styled from "styled-components";
+
+const Brand = styled(Navbar.Brand)`
+  font-size: 25px;
+`;
 
 export default function Header() {
   const router = useRouter();
@@ -14,21 +18,19 @@ export default function Header() {
     }
   }, []);
   return (
-    <Navbar sticky="top" bg="light" variant="light">
+    <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="/" style={{ fontSize: "25px" }}>
-          AWESOME FOOD STORE
-        </Navbar.Brand>
+        <Brand href="/">AWESOME FOOD STORE</Brand>
         <Nav className="me-auto">
           <Nav.Link
             href="/"
-            style={location ? { fontWeight: "800", color: "black" } : {}}
+            style={(location && { fontWeight: "800", color: "black" }) || {}}
           >
             ABOUT
           </Nav.Link>
           <Nav.Link
             href="/store"
-            style={!location ? { fontWeight: "800", color: "black" } : {}}
+            style={(!location && { fontWeight: "800", color: "black" }) || {}}
           >
             STORE
           </Nav.Link>
