@@ -111,12 +111,14 @@ const DetailImage = styled(Image)`
 const DetailInfo = styled.div`
   width: 100%;
   height: 100%;
+  max-height: 700px;
   padding: 8%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-line;
   overflow-y: auto;
+  align-self: center;
 `;
 
 const DetailTitle = styled.h3``;
